@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта сайта - Магазин электроники</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .sitemap-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .sitemap-container h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .sitemap-container h1:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
+            border-radius: 3px;
+        }
+
+        .sitemap-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .sitemap-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .sitemap-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+        }
+
+        .sitemap-section h2 i {
+            margin-right: 15px;
+            color: #3498db;
+        }
+
+        .sitemap-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .sitemap-list li {
+            margin-bottom: 15px;
+        }
+
+        .sitemap-list a {
+            color: #34495e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .sitemap-list a:hover {
+            color: #3498db;
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .sitemap-list i {
+            margin-right: 15px;
+            color: #3498db;
+            font-size: 1.2em;
+            width: 25px;
+            text-align: center;
+        }
+
+        .sitemap-subsection {
+            margin-left: 40px;
+            margin-top: 15px;
+            border-left: 2px solid #e0e0e0;
+            padding-left: 15px;
+        }
+
+        .sitemap-subsection li {
+            margin-bottom: 10px;
+        }
+
+        .sitemap-subsection a {
+            font-size: 0.95em;
+            padding: 8px 12px;
+        }
+
+        .sitemap-subsection a:hover {
+            background: #f0f7ff;
+        }
+
+        @media (max-width: 768px) {
+            .sitemap-list {
+                grid-template-columns: 1fr;
+            }
+
+            .sitemap-section {
+                padding: 15px;
+            }
+
+            .sitemap-container {
+                margin: 20px;
+                padding: 15px;
+            }
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sitemap-section {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .sitemap-section:nth-child(1) { animation-delay: 0.1s; }
+        .sitemap-section:nth-child(2) { animation-delay: 0.2s; }
+        .sitemap-section:nth-child(3) { animation-delay: 0.3s; }
+        .sitemap-section:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Стилизация скроллбара */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">TechStore</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="about.html">О нас</a>
+                <a href="contact.html">Контакты</a>
+            </div>
+            <div class="nav-icons">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="favorites.html"><i class="fas fa-heart"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="sitemap-container">
+        <h1>Карта сайта</h1>
+
+        <div class="sitemap-section">
+            <h2><i class="fas fa-sitemap"></i>Основные разделы</h2>
+            <ul class="sitemap-list">
+                <li>
+                    <a href="index.html">
+                        <i class="fas fa-home"></i>
+                        Главная страница
+                    </a>
+                </li>
+                <li>
+                    <a href="catalog.html">
+                        <i class="fas fa-th-large"></i>
+                        Каталог товаров
+                    </a>
+                    <ul class="sitemap-subsection">
+                        <li>
+                            <a href="catalog.html?category=smartphones">
+                                <i class="fas fa-mobile-alt"></i>
+                                Смартфоны
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=laptops">
+                                <i class="fas fa-laptop"></i>
+                                Ноутбуки
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=tablets">
+                                <i class="fas fa-tablet-alt"></i>
+                                Планшеты
+                            </a>
+                        </li>
+                        <li>
+                            <a href="catalog.html?category=accessories">
+                                <i class="fas fa-headphones"></i>
+                                Аксессуары
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="about.html">
+                        <i class="fas fa-info-circle"></i>
+                        О компании
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        <i class="fas fa-envelope"></i>
+                        Контакты
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2><i class="fas fa-user-circle"></i>Личный кабинет</h2>
+            <ul class="sitemap-list">
+                <li>
+                    <a href="account.html">
+                        <i class="fas fa-user"></i>
+                        Мой профиль
+                    </a>
+                </li>
+                <li>
+                    <a href="orders.html">
+                        <i class="fas fa-shopping-bag"></i>
+                        Мои заказы
+                    </a>
+                </li>
+                <li>
+                    <a href="favorites.html">
+                        <i class="fas fa-heart"></i>
+                        Избранное
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        Корзина
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2><i class="fas fa-info-circle"></i>Информация</h2>
+            <ul class="sitemap-list">
+                <li>
+                    <a href="delivery.html">
+                        <i class="fas fa-truck"></i>
+                        Доставка
+                    </a>
+                </li>
+                <li>
+                    <a href="payment.html">
+                        <i class="fas fa-credit-card"></i>
+                        Оплата
+                    </a>
+                </li>
+                <li>
+                    <a href="warranty.html">
+                        <i class="fas fa-shield-alt"></i>
+                        Гарантия
+                    </a>
+                </li>
+                <li>
+                    <a href="returns.html">
+                        <i class="fas fa-undo"></i>
+                        Возврат товара
+                    </a>
+                </li>
+                <li>
+                    <a href="privacy.html">
+                        <i class="fas fa-lock"></i>
+                        Политика конфиденциальности
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2><i class="fas fa-question-circle"></i>Помощь</h2>
+            <ul class="sitemap-list">
+                <li>
+                    <a href="faq.html">
+                        <i class="fas fa-question-circle"></i>
+                        Часто задаваемые вопросы
+                    </a>
+                </li>
+                <li>
+                    <a href="support.html">
+                        <i class="fas fa-headset"></i>
+                        Служба поддержки
+                    </a>
+                </li>
+                <li>
+                    <a href="feedback.html">
+                        <i class="fas fa-comment-alt"></i>
+                        Обратная связь
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О компании</h3>
+                <p>TechStore - ваш надежный магазин электроники с широким ассортиментом товаров и отличным сервисом.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@techstore.ru</p>
+                <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Примерная, 123</p>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechStore. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

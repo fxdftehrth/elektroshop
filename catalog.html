@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Каталог электроники — широкий выбор техники и гаджетов по выгодным ценам">
+  <meta name="keywords" content="каталог электроники, смартфоны, ноутбуки, телевизоры, аудио техника">
+  <title>Каталог - Магазин Электроники</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="img/logo.jpg" alt="Магазин Электроники" /></a>
+      <h1>Магазин Электроники</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="catalog.html" class="active"><i class="fas fa-th-large"></i> Каталог</a></li>
+        <li><a href="brands.html"><i class="fas fa-trademark"></i> Бренды</a></li>
+        <li><a href="reviews.html"><i class="fas fa-comment"></i> Отзывы</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> О сайте</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Контакты</a></li>
+        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="catalog-header">
+      <h2>Каталог товаров</h2>
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Поиск товаров...">
+        <button type="button"><i class="fas fa-search"></i></button>
+      </div>
+    </section>
+
+    <div class="catalog-container">
+      <aside class="filters">
+        <h3>Фильтры</h3>
+        <div class="filter-section">
+          <h4>Категории</h4>
+          <ul>
+            <li><label><input type="checkbox"> Смартфоны</label></li>
+            <li><label><input type="checkbox"> Ноутбуки</label></li>
+            <li><label><input type="checkbox"> Телевизоры</label></li>
+            <li><label><input type="checkbox"> Аудио техника</label></li>
+            <li><label><input type="checkbox"> Аксессуары</label></li>
+          </ul>
+        </div>
+        <div class="filter-section">
+          <h4>Бренды</h4>
+          <ul>
+            <li><label><input type="checkbox"> Apple</label></li>
+            <li><label><input type="checkbox"> Samsung</label></li>
+            <li><label><input type="checkbox"> Xiaomi</label></li>
+            <li><label><input type="checkbox"> Sony</label></li>
+            <li><label><input type="checkbox"> ASUS</label></li>
+            <li><label><input type="checkbox"> Dell</label></li>
+          </ul>
+        </div>
+        <div class="filter-section">
+          <h4>Цена</h4>
+          <div class="price-range">
+            <input type="range" min="0" max="200000" value="100000">
+            <div class="price-inputs">
+              <input type="number" placeholder="От">
+              <input type="number" placeholder="До">
+            </div>
+          </div>
+        </div>
+        <button class="apply-filters">Применить фильтры</button>
+      </aside>
+
+      <section class="catalog-content">
+        <div class="catalog-toolbar">
+          <div class="sort-options">
+            <label>Сортировать по:</label>
+            <select>
+              <option>Популярности</option>
+              <option>Цене (по возрастанию)</option>
+              <option>Цене (по убыванию)</option>
+              <option>Новизне</option>
+            </select>
+          </div>
+          <div class="view-options">
+            <button class="grid-view active"><i class="fas fa-th-large"></i></button>
+            <button class="list-view"><i class="fas fa-list"></i></button>
+          </div>
+        </div>
+
+        <div class="product-grid">
+          <!-- Смартфоны -->
+          <div class="product-card">
+            <div class="product-badge">Хит продаж</div>
+            <div class="product-image">
+              <img src="img/fivee.jpg" alt="iPhone 14 Pro Max" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>iPhone 14 Pro Max</h4>
+            <p class="product-description">Флагманский смартфон с Dynamic Island</p>
+            <p class="product-price"><strong>129 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(892)</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">Скидка 15%</div>
+            <div class="product-image">
+              <img src="img/five.jpg" alt="MacBook Air M2" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>MacBook Air M2</h4>
+            <p class="product-description">Ультрабук с чипом M2</p>
+            <p class="product-price"><strong>119 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(567)</span>
+            </div>
+          </div>
+
+          <!-- Смартфоны -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/six.jpg" alt="Samsung Galaxy S22 Ultra" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Samsung Galaxy S22 Ultra</h4>
+            <p class="product-description">Флагманский смартфон с S Pen</p>
+            <p class="product-price"><strong>99 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(342)</span>
+            </div>
+          </div>
+
+          <!-- Ноутбуки -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/seven.jpg" alt="ASUS ROG Zephyrus G14" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>ASUS ROG Zephyrus G14</h4>
+            <p class="product-description">Игровой ноутбук с AMD Ryzen 9</p>
+            <p class="product-price"><strong>129 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(189)</span>
+            </div>
+          </div>
+
+          <!-- Телевизоры -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/tv_thumb.jpg" alt="Sony BRAVIA XR A90J" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Sony BRAVIA XR A90J</h4>
+            <p class="product-description">OLED телевизор с процессором Cognitive Processor XR</p>
+            <p class="product-price"><strong>299 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(98)</span>
+            </div>
+          </div>
+
+          <!-- Аудио техника -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/sevenn.jpeg" alt="Apple AirPods Pro" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Apple AirPods Pro</h4>
+            <p class="product-description">Беспроводные наушники с активным шумоподавлением</p>
+            <p class="product-price"><strong>24 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(512)</span>
+            </div>
+          </div>
+
+          <!-- Аксессуары -->
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/eagh.jpg" alt="Apple Watch Series 7" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Apple Watch Series 7</h4>
+            <p class="product-description">Умные часы с большим дисплеем</p>
+            <p class="product-price"><strong>29 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(423)</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/nine.jpg" alt="Samsung Galaxy Watch 4" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Samsung Galaxy Watch 4</h4>
+            <p class="product-description">Умные часы на Wear OS</p>
+            <p class="product-price"><strong>24 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(287)</span>
+            </div>
+          </div>
+
+          <!-- Sony -->
+          <div class="product-card">
+            <div class="product-badge">Хит продаж</div>
+            <div class="product-image">
+              <img src="img/ten.jpg" alt="Sony WH-1000XM5" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Sony WH-1000XM5</h4>
+            <p class="product-description">Беспроводные наушники с шумоподавлением</p>
+            <p class="product-price"><strong>39 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(445)</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">Новинка</div>
+            <div class="product-image">
+              <img src="img/tv_thumb.jpg" alt="Sony A95K" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Sony A95K</h4>
+            <p class="product-description">OLED телевизор с технологией QD-OLED</p>
+            <p class="product-price"><strong>299 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(156)</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">Скидка 15%</div>
+            <div class="product-image">
+              <img src="img/camera_thumb.jpg" alt="Sony Alpha 7 IV" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Sony Alpha 7 IV</h4>
+            <p class="product-description">Беззеркальная камера с полнокадровым сенсором</p>
+            <p class="product-price"><strong>249 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(234)</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/tenn.jpg" alt="PlayStation 5" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>PlayStation 5</h4>
+            <p class="product-description">Игровая консоль нового поколения</p>
+            <p class="product-price"><strong>49 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(789)</span>
+            </div>
+          </div>
+
+          <!-- Xiaomi -->
+          <div class="product-card">
+            <div class="product-badge">Хит продаж</div>
+            <div class="product-image">
+              <img src="img/eleven.jpg" alt="Xiaomi 13 Pro" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Xiaomi 13 Pro</h4>
+            <p class="product-description">Флагманский смартфон с камерой Leica</p>
+            <p class="product-price"><strong>89 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(567)</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">Новинка</div>
+            <div class="product-image">
+              <img src="img/elevenn.jpg" alt="Xiaomi Book Pro 16" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Xiaomi Book Pro 16</h4>
+            <p class="product-description">Ультрабук с OLED-дисплеем</p>
+            <p class="product-price"><strong>129 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(234)</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">Скидка 20%</div>
+            <div class="product-image">
+              <img src="img/elevens.jpg" alt="Xiaomi TV 6 OLED" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Xiaomi TV 6 OLED</h4>
+            <p class="product-description">OLED телевизор с Dolby Vision</p>
+            <p class="product-price"><strong>89 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(345)</span>
+            </div>
+          </div>
+
+          <!-- Dell -->
+          <div class="product-card">
+            <div class="product-badge">Бизнес</div>
+            <div class="product-image">
+              <img src="img/hundrid.jpg" alt="Dell XPS 15" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Dell XPS 15</h4>
+            <p class="product-description">Премиальный ноутбук для профессионалов</p>
+            <p class="product-price"><strong>199 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(456)</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/fun.jpg" alt="Dell UltraSharp U2723QE" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Dell UltraSharp U2723QE</h4>
+            <p class="product-description">4K монитор с USB-C</p>
+            <p class="product-price"><strong>89 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>(278)</span>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-badge">Скидка 10%</div>
+            <div class="product-image">
+              <img src="img/111.jpeg" alt="Dell Latitude 5420" />
+              <div class="product-overlay">
+                <button class="add-to-cart">В корзину</button>
+              </div>
+            </div>
+            <h4>Dell Latitude 5420</h4>
+            <p class="product-description">Бизнес-ноутбук с защитой данных</p>
+            <p class="product-price"><strong>129 990 ₽</strong></p>
+            <div class="product-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>(189)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination">
+          <button class="prev-page"><i class="fas fa-chevron-left"></i></button>
+          <div class="page-numbers">
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <span>...</span>
+            <button>10</button>
+          </div>
+          <button class="next-page"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>О компании</h4>
+        <ul>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+          <li><a href="careers.html">Вакансии</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Помощь</h4>
+        <ul>
+          <li><a href="delivery.html">Доставка</a></li>
+          <li><a href="payment.html">Оплата</a></li>
+          <li><a href="returns.html">Возврат</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Мы в соцсетях</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-vk"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Магазин Электроники. Все права защищены.</p>
+      <p><a href="sitemap.html">Карта сайта</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+

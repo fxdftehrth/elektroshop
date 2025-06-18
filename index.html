@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Магазин Электроники — техника, гаджеты, аксессуары. Выгодные цены и быстрая доставка.">
+  <meta name="keywords" content="электроника, техника, гаджеты, магазин электроники, смартфоны, ноутбуки">
+  <title>Магазин Электроники</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="img/logo.jpg" alt="Магазин Электроники" /></a>
+      <h1>Магазин Электроники</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="catalog.html"><i class="fas fa-th-large"></i> Каталог</a></li>
+        <li><a href="brands.html"><i class="fas fa-trademark"></i> Бренды</a></li>
+        <li><a href="reviews.html"><i class="fas fa-comment"></i> Отзывы</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> О сайте</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Контакты</a></li>
+        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Добро пожаловать в мир технологий</h2>
+      <p>У нас вы найдёте лучшие предложения на смартфоны, ноутбуки и другую электронику.</p>
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Поиск товаров...">
+        <button type="button"><i class="fas fa-search"></i></button>
+      </div>
+      <img src="img/logo.jpg" alt="Электроника баннер" />
+    </section>
+
+    <section class="categories">
+      <h3>Популярные категории</h3>
+      <div class="category-grid">
+        <div class="category-card">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Смартфоны</h4>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-laptop"></i>
+          <h4>Ноутбуки</h4>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-headphones"></i>
+          <h4>Аудио</h4>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-tv"></i>
+          <h4>Телевизоры</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="popular-products">
+      <h3>Популярные товары</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/one.jpg" alt="Смартфон Galaxy S21" />
+            <div class="product-overlay">
+              <button class="add-to-cart">В корзину</button>
+            </div>
+          </div>
+          <h4>Galaxy S21</h4>
+          <p class="product-description">Мощный смартфон с отличной камерой</p>
+          <p class="product-price"><strong>49 990 ₽</strong></p>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>(128)</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/three.jpg" alt="Ноутбук MacBook Pro" />
+            <div class="product-overlay">
+              <button class="add-to-cart">В корзину</button>
+            </div>
+          </div>
+          <h4>MacBook Pro M2</h4>
+          <p class="product-description">Профессиональный ноутбук для работы и творчества</p>
+          <p class="product-price"><strong>129 990 ₽</strong></p>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(256)</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/fou.png" alt="Наушники Sony WH-1000XM4" />
+            <div class="product-overlay">
+              <button class="add-to-cart">В корзину</button>
+            </div>
+          </div>
+          <h4>Sony WH-1000XM4</h4>
+          <p class="product-description">Беспроводные наушники с шумоподавлением</p>
+          <p class="product-price"><strong>29 990 ₽</strong></p>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>(512)</span>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/two.jpg" alt="Умные часы Apple Watch" />
+            <div class="product-overlay">
+              <button class="add-to-cart">В корзину</button>
+            </div>
+          </div>
+          <h4>Apple Watch Series 7</h4>
+          <p class="product-description">Умные часы с расширенным функционалом</p>
+          <p class="product-price"><strong>34 990 ₽</strong></p>
+          <div class="product-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>(89)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <i class="fas fa-truck"></i>
+        <h4>Быстрая доставка</h4>
+        <p>Доставляем в течение 1-2 дней</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Гарантия качества</h4>
+        <p>Гарантия на все товары</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-headset"></i>
+        <h4>Поддержка 24/7</h4>
+        <p>Всегда на связи</p>
+      </div>
+    </section>
+
+    <!-- Форма отзывов -->
+    <section class="reviews-section">
+      <div class="container">
+        <h2>Оставить отзыв</h2>
+        <div class="add-review">
+          <form class="review-form" id="reviewForm">
+            <div class="form-group">
+              <label for="review-name">Ваше имя</label>
+              <input type="text" id="review-name" required>
+            </div>
+            <div class="form-group">
+              <label for="review-text">Ваш отзыв</label>
+              <textarea id="review-text" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Отправить отзыв</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>О компании</h4>
+        <ul>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+          <li><a href="careers.html">Вакансии</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Помощь</h4>
+        <ul>
+          <li><a href="delivery.html">Доставка</a></li>
+          <li><a href="payment.html">Оплата</a></li>
+          <li><a href="returns.html">Возврат</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Мы в соцсетях</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-vk"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Магазин Электроники. Все права защищены.</p>
+      <p><a href="sitemap.html">Карта сайта</a></p>
+    </div>
+  </footer>
+</body>
+</html>

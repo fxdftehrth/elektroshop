@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка - Магазин Электроники</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .delivery-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .delivery-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .delivery-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .delivery-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .delivery-card i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .delivery-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .delivery-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .delivery-card .price {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 18px;
+        }
+
+        .delivery-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .delivery-info h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .delivery-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .delivery-info li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .delivery-info li:before {
+            content: "✓";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+        }
+
+        .delivery-map {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .delivery-map iframe {
+            max-width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .delivery-terms {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .delivery-terms h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .delivery-terms p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .delivery-terms ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .delivery-terms li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .delivery-terms li:before {
+            content: "•";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.jpg" alt="Магазин Электроники" /></a>
+            <h1>Магазин Электроники</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="catalog.html"><i class="fas fa-th-large"></i> Каталог</a></li> 
+                <li><a href="brands.html"><i class="fas fa-trademark"></i> Бренды</a></li> 
+                <li><a href="reviews.html"><i class="fas fa-comment"></i> Отзывы</a></li>     
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> О сайте</a></li>  
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Контакты</a></li> 
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Доставка</h1>
+            
+            <div class="delivery-section">
+                <div class="delivery-methods">
+                    <div class="delivery-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Курьерская доставка</h3>
+                        <p>Доставка курьером до двери в удобное для вас время. Доступна в большинстве крупных городов России.</p>
+                        <p class="price">от 300 ₽</p>
+                        <ul>
+                            <li>Доставка в течение 1-2 дней</li>
+                            <li>Выбор временного интервала</li>
+                            <li>Возможность оплаты при получении</li>
+                        </ul>
+                    </div>
+
+                    <div class="delivery-card">
+                        <i class="fas fa-store"></i>
+                        <h3>Пункты выдачи</h3>
+                        <p>Получите заказ в одном из наших пунктов выдачи или партнерских магазинов.</p>
+                        <p class="price">от 200 ₽</p>
+                        <ul>
+                            <li>Более 1000 пунктов выдачи</li>
+                            <li>Работают ежедневно</li>
+                            <li>Бесплатное хранение 3 дня</li>
+                        </ul>
+                    </div>
+
+                    <div class="delivery-card">
+                        <i class="fas fa-box"></i>
+                        <h3>Почта России</h3>
+                        <p>Доставка в любой населенный пункт России через Почту России.</p>
+                        <p class="price">от 250 ₽</p>
+                        <ul>
+                            <li>Доставка в любой город</li>
+                            <li>Отслеживание посылки</li>
+                            <li>Страхование отправления</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="delivery-info">
+                    <h2>Информация о доставке</h2>
+                    <ul>
+                        <li>Доставка осуществляется ежедневно с 9:00 до 21:00</li>
+                        <li>При заказе на сумму от 5000 ₽ доставка бесплатная</li>
+                        <li>Вы можете выбрать удобный временной интервал доставки</li>
+                        <li>Курьер свяжется с вами за час до доставки</li>
+                        <li>При получении заказа вы можете проверить товар</li>
+                    </ul>
+                </div>
+
+                <div class="delivery-map">
+                    <h2>Зона доставки</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.3727899448134!2d37.618423!3d55.7558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDQ1JzIwLjkiTiAzN8KwMzcnMDYuMyJF!5e0!3m2!1sru!2sru!4v1647000000000!5m2!1sru!2sru" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="delivery-terms">
+                    <h2>Условия доставки</h2>
+                    <p>Для оформления доставки необходимо:</p>
+                    <ul>
+                        <li>Выбрать товар и добавить его в корзину</li>
+                        <li>Указать адрес доставки</li>
+                        <li>Выбрать способ доставки</li>
+                        <li>Выбрать способ оплаты</li>
+                        <li>Подтвердить заказ</li>
+                    </ul>
+                    <p>После оформления заказа вы получите SMS и email с информацией о заказе и его статусе.</p>
+                    <p>При получении заказа обязательно проверьте:</p>
+                    <ul>
+                        <li>Целостность упаковки</li>
+                        <li>Комплектность товара</li>
+                        <li>Работоспособность техники</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О компании</h4>
+                <ul>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="careers.html">Вакансии</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Помощь</h4>
+                <ul>
+                    <li><a href="delivery.html">Доставка</a></li>
+                    <li><a href="payment.html">Оплата</a></li>
+                    <li><a href="returns.html">Возврат</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Магазин Электроники. Все права защищены.</p>
+            <p><a href="sitemap.html">Карта сайта</a></p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Часто задаваемые вопросы - TechStore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .faq-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .faq-title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .faq-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 12px 25px;
+            background: #fff;
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            color: #3498db;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .category-btn i {
+            font-size: 1.1em;
+        }
+
+        .faq-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title i {
+            color: #3498db;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 25px 25px;
+            max-height: 1000px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+            color: #3498db;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-contact {
+            text-align: center;
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+
+        .contact-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .contact-text {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .contact-btn:hover {
+            background: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .faq-container {
+                margin: 20px;
+            }
+
+            .faq-title {
+                font-size: 2em;
+            }
+
+            .category-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .faq-question {
+                padding: 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">TechStore</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="about.html">О нас</a>
+                <a href="contact.html">Контакты</a>
+            </div>
+            <div class="nav-icons">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="favorites.html"><i class="fas fa-heart"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="faq-container">
+        <div class="faq-header">
+            <h1 class="faq-title">Часто задаваемые вопросы</h1>
+            <p class="faq-subtitle">
+                На этой странице вы найдете ответы на самые популярные вопросы о нашем магазине, товарах и услугах
+            </p>
+        </div>
+
+        <div class="faq-categories">
+            <button class="category-btn active" data-category="all">
+                <i class="fas fa-th-large"></i>
+                Все вопросы
+            </button>
+            <button class="category-btn" data-category="delivery">
+                <i class="fas fa-truck"></i>
+                Доставка
+            </button>
+            <button class="category-btn" data-category="payment">
+                <i class="fas fa-credit-card"></i>
+                Оплата
+            </button>
+            <button class="category-btn" data-category="warranty">
+                <i class="fas fa-shield-alt"></i>
+                Гарантия
+            </button>
+            <button class="category-btn" data-category="returns">
+                <i class="fas fa-undo"></i>
+                Возврат
+            </button>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="section-title">
+                <i class="fas fa-truck"></i>
+                Доставка
+            </h2>
+            <div class="faq-item" data-category="delivery">
+                <div class="faq-question">
+                    Какие способы доставки доступны?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Мы предлагаем следующие способы доставки:
+                    <ul>
+                        <li>Курьерская доставка по Москве и области</li>
+                        <li>Доставка в пункты выдачи</li>
+                        <li>Почтовая доставка по России</li>
+                        <li>Самовывоз из наших магазинов</li>
+                    </ul>
+                    Стоимость и сроки доставки зависят от выбранного способа и региона.
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="delivery">
+                <div class="faq-question">
+                    Сколько стоит доставка?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Стоимость доставки зависит от региона и способа доставки:
+                    <ul>
+                        <li>Бесплатная доставка при заказе от 5000 рублей</li>
+                        <li>Курьерская доставка по Москве - от 300 рублей</li>
+                        <li>Доставка в пункты выдачи - от 200 рублей</li>
+                        <li>Почтовая доставка - от 400 рублей</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="section-title">
+                <i class="fas fa-credit-card"></i>
+                Оплата
+            </h2>
+            <div class="faq-item" data-category="payment">
+                <div class="faq-question">
+                    Какие способы оплаты принимаются?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Мы принимаем следующие способы оплаты:
+                    <ul>
+                        <li>Банковские карты (Visa, MasterCard, МИР)</li>
+                        <li>Электронные кошельки (ЮMoney, WebMoney)</li>
+                        <li>Наличными при получении</li>
+                        <li>Банковский перевод</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="payment">
+                <div class="faq-question">
+                    Безопасна ли оплата онлайн?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Да, оплата на нашем сайте полностью безопасна. Мы используем современные системы шифрования и защиты данных. Все платежи обрабатываются через защищенные платежные шлюзы. Мы не храним данные ваших банковских карт.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="section-title">
+                <i class="fas fa-shield-alt"></i>
+                Гарантия
+            </h2>
+            <div class="faq-item" data-category="warranty">
+                <div class="faq-question">
+                    Какой срок гарантии на товары?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Срок гарантии зависит от категории товара:
+                    <ul>
+                        <li>Смартфоны - 12 месяцев</li>
+                        <li>Ноутбуки - 24 месяца</li>
+                        <li>Планшеты - 12 месяцев</li>
+                        <li>Аксессуары - 6 месяцев</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="warranty">
+                <div class="faq-question">
+                    Что делать, если товар сломался?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    При возникновении неисправности в гарантийный период:
+                    <ol>
+                        <li>Свяжитесь с нашим сервисным центром</li>
+                        <li>Предоставьте гарантийный талон и чек</li>
+                        <li>Опишите проблему</li>
+                        <li>Следуйте инструкциям специалиста</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="section-title">
+                <i class="fas fa-undo"></i>
+                Возврат
+            </h2>
+            <div class="faq-item" data-category="returns">
+                <div class="faq-question">
+                    Как вернуть товар?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Для возврата товара необходимо:
+                    <ol>
+                        <li>Сохранить товарный вид и упаковку</li>
+                        <li>Иметь при себе чек или накладную</li>
+                        <li>Написать заявление на возврат</li>
+                        <li>Обратиться в магазин или сервисный центр</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="returns">
+                <div class="faq-question">
+                    В течение какого времени можно вернуть товар?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Согласно закону о защите прав потребителей:
+                    <ul>
+                        <li>14 дней на возврат товара надлежащего качества</li>
+                        <li>В течение гарантийного срока на возврат товара с недостатками</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-contact">
+            <h2 class="contact-title">Не нашли ответ на свой вопрос?</h2>
+            <p class="contact-text">
+                Наши специалисты готовы помочь вам и ответить на любые вопросы
+            </p>
+            <a href="contact.html" class="contact-btn">
+                <i class="fas fa-headset"></i>
+                Связаться с нами
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О компании</h3>
+                <p>TechStore - ваш надежный магазин электроники с широким ассортиментом товаров и отличным сервисом.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@techstore.ru</p>
+                <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Примерная, 123</p>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechStore. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Обработка FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Закрываем все FAQ
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Открываем выбранный FAQ
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Обработка категорий
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                
+                // Обновляем активную кнопку
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+                
+                // Фильтруем вопросы
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

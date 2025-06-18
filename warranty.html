@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гарантийное обслуживание - TechStore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .warranty-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .warranty-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .warranty-title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .warranty-subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .warranty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .warranty-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .warranty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: #f0f7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #3498db;
+            font-size: 1.5em;
+        }
+
+        .card-title {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .warranty-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 50px;
+        }
+
+        .info-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-icon {
+            color: #3498db;
+            font-size: 1.2em;
+            margin-top: 3px;
+        }
+
+        .info-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .info-content p {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .warranty-faq {
+            margin-bottom: 50px;
+        }
+
+        .faq-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 1000px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .warranty-contact {
+            text-align: center;
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .contact-text {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .contact-btn:hover {
+            background: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .warranty-container {
+                margin: 20px;
+            }
+
+            .warranty-title {
+                font-size: 2em;
+            }
+
+            .warranty-info {
+                padding: 20px;
+            }
+
+            .info-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">TechStore</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="about.html">О нас</a>
+                <a href="contact.html">Контакты</a>
+            </div>
+            <div class="nav-icons">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="favorites.html"><i class="fas fa-heart"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="warranty-container">
+        <div class="warranty-header">
+            <h1 class="warranty-title">Гарантийное обслуживание</h1>
+            <p class="warranty-subtitle">
+                Мы предоставляем официальную гарантию на все товары и обеспечиваем профессиональное сервисное обслуживание
+            </p>
+        </div>
+
+        <div class="warranty-grid">
+            <div class="warranty-card">
+                <div class="card-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2 class="card-title">Официальная гарантия</h2>
+                <p class="card-text">
+                    Все товары в нашем магазине имеют официальную гарантию от производителя. Срок гарантии зависит от категории товара и составляет от 12 до 36 месяцев.
+                </p>
+            </div>
+
+            <div class="warranty-card">
+                <div class="card-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h2 class="card-title">Сервисное обслуживание</h2>
+                <p class="card-text">
+                    Наш сервисный центр оснащен современным оборудованием и укомплектован оригинальными запчастями для ремонта вашей техники.
+                </p>
+            </div>
+
+            <div class="warranty-card">
+                <div class="card-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h2 class="card-title">Бесплатная доставка</h2>
+                <p class="card-text">
+                    При необходимости ремонта мы бесплатно заберем ваше устройство и доставим его обратно после обслуживания.
+                </p>
+            </div>
+        </div>
+
+        <div class="warranty-info">
+            <h2 class="info-title">Условия гарантийного обслуживания</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Срок гарантии</h3>
+                        <p>Смартфоны - 12 месяцев<br>
+                        Ноутбуки - 24 месяца<br>
+                        Планшеты - 12 месяцев<br>
+                        Аксессуары - 6 месяцев</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Необходимые документы</h3>
+                        <p>Гарантийный талон<br>
+                        Чек или накладная<br>
+                        Упаковка и комплектация<br>
+                        Паспорт владельца</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Гарантийные случаи</h3>
+                        <p>Заводской брак<br>
+                        Неисправности в работе<br>
+                        Дефекты внешнего вида<br>
+                        Проблемы с комплектацией</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-ban"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Не гарантийные случаи</h3>
+                        <p>Механические повреждения<br>
+                        Попадание жидкости<br>
+                        Неправильная эксплуатация<br>
+                        Самостоятельный ремонт</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="warranty-faq">
+            <h2 class="faq-title">Часто задаваемые вопросы</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Как проверить гарантийный статус товара?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Вы можете проверить гарантийный статус вашего товара в личном кабинете на нашем сайте или обратившись в сервисный центр. Для проверки потребуется серийный номер устройства.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Сколько времени занимает ремонт?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Стандартный срок ремонта составляет от 3 до 14 рабочих дней, в зависимости от сложности неисправности и наличия необходимых запчастей. В случае задержки мы обязательно вас уведомим.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Можно ли продлить гарантию?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    Да, вы можете продлить гарантию на большинство товаров. Для этого необходимо приобрести дополнительную гарантию в течение 30 дней после покупки товара. Подробности уточняйте у наших менеджеров.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Что делать, если товар сломался?
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    При возникновении неисправности свяжитесь с нашим сервисным центром по телефону или через форму на сайте. Мы поможем определить причину поломки и организуем ремонт в кратчайшие сроки.
+                </div>
+            </div>
+        </div>
+
+        <div class="warranty-contact">
+            <h2 class="contact-title">Нужна помощь?</h2>
+            <p class="contact-text">
+                Наши специалисты готовы ответить на все ваши вопросы и помочь с гарантийным обслуживанием
+            </p>
+            <a href="contact.html" class="contact-btn">
+                <i class="fas fa-headset"></i>
+                Связаться с нами
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О компании</h3>
+                <p>TechStore - ваш надежный магазин электроники с широким ассортиментом товаров и отличным сервисом.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@techstore.ru</p>
+                <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Примерная, 123</p>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechStore. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Обработка FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Закрываем все FAQ
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Открываем выбранный FAQ
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Контактная информация магазина электроники — адрес, телефон, email и форма обратной связи.">
+  <meta name="keywords" content="контакты магазина электроники, адрес магазина, телефон магазина, форма обратной связи">
+  <title>Контакты | Магазин Электроники</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="img/logo.jpg" alt="Магазин Электроники" /></a>
+      <h1>Магазин Электроники</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="catalog.html"><i class="fas fa-th-large"></i> Каталог</a></li>
+        <li><a href="brands.html"><i class="fas fa-trademark"></i> Бренды</a></li>
+        <li><a href="reviews.html"><i class="fas fa-comment"></i> Отзывы</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> О сайте</a></li>
+        <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Контакты</a></li>
+        <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-intro">
+      <h2>Свяжитесь с нами</h2>
+      <p>Мы всегда готовы ответить на ваши вопросы и помочь с выбором</p>
+    </section>
+
+    <section class="contact-content">
+      <div class="contact-info">
+        <div class="contact-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Адрес</h3>
+          <p>г. Москва, ул. Электронная, д. 42</p>
+          <p>БЦ "Технопарк", 5 этаж</p>
+        </div>
+
+        <div class="contact-card">
+          <i class="fas fa-phone"></i>
+          <h3>Телефон</h3>
+          <p>+7 (495) 123-45-67</p>
+          <p>+7 (800) 123-45-67</p>
+        </div>
+
+        <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p>info@magazin-elektroniki.ru</p>
+          <p>support@magazin-elektroniki.ru</p>
+        </div>
+
+        <div class="contact-card">
+          <i class="fas fa-clock"></i>
+          <h3>Режим работы</h3>
+          <p>Пн-Пт: 9:00 - 20:00</p>
+          <p>Сб-Вс: 10:00 - 18:00</p>
+        </div>
+      </div>
+
+      <div class="contact-form-container">
+        <h3>Форма обратной связи</h3>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Тема</label>
+            <select id="subject" name="subject" required>
+              <option value="">Выберите тему</option>
+              <option value="question">Вопрос по товару</option>
+              <option value="order">Статус заказа</option>
+              <option value="return">Возврат товара</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Сообщение</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Отправить сообщение</button>
+        </form>
+      </div>
+
+      <div class="map-container">
+        <h3>Как нас найти</h3>
+        <div class="map">
+          <!-- Здесь будет карта -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.4278533975397!2d37.615310315901474!3d55.75202398055754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQvtCy0YHQutC40Lkg0JrRgNC10LzQu9GM!5e0!3m2!1sru!2sru!4v1647874587297!5m2!1sru!2sru" 
+                  width="100%" 
+                  height="450" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>О компании</h4>
+        <ul>
+          <li><a href="about.html">О нас</a></li>
+          <li><a href="contact.html">Контакты</a></li>
+          <li><a href="careers.html">Вакансии</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Помощь</h4>
+        <ul>
+          <li><a href="delivery.html">Доставка</a></li>
+          <li><a href="payment.html">Оплата</a></li>
+          <li><a href="returns.html">Возврат</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Мы в соцсетях</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-vk"></i></a>
+          <a href="#"><i class="fab fa-telegram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Магазин Электроники. Все права защищены.</p>
+      <p><a href="sitemap.html">Карта сайта</a></p>
+    </div>
+  </footer>
+</body>
+</html>

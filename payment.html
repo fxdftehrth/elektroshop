@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата - Магазин Электроники</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .payment-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .payment-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .payment-card i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .payment-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .payment-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .payment-info {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .payment-info h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .payment-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .payment-info li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .payment-info li:before {
+            content: "✓";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+        }
+
+        .payment-terms {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .payment-terms h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .payment-terms p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .payment-terms ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .payment-terms li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .payment-terms li:before {
+            content: "•";
+            color: #007bff;
+            position: absolute;
+            left: 0;
+        }
+
+        .payment-security {
+            background-color: #e8f4ff;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .payment-security h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .payment-security .security-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .security-feature {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .security-feature i {
+            font-size: 30px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .security-feature h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .security-feature p {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="img/logo.jpg" alt="Магазин Электроники" /></a>
+            <h1>Магазин Электроники</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="catalog.html"><i class="fas fa-th-large"></i> Каталог</a></li>
+                <li><a href="brands.html"><i class="fas fa-trademark"></i> Бренды</a></li>
+                <li><a href="articles.html"><i class="fas fa-newspaper"></i> Статьи</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> О сайте</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Контакты</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Корзина</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h1>Оплата</h1>
+            
+            <div class="payment-section">
+                <div class="payment-methods">
+                    <div class="payment-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Банковской картой</h3>
+                        <p>Оплата картами Visa, MasterCard, МИР. Безопасная оплата через защищенное соединение.</p>
+                        <ul>
+                            <li>Мгновенное подтверждение</li>
+                            <li>Без комиссии</li>
+                            <li>Защита данных</li>
+                        </ul>
+                    </div>
+
+                    <div class="payment-card">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h3>Наличными при получении</h3>
+                        <p>Оплата наличными курьеру при доставке или в пункте выдачи заказа.</p>
+                        <ul>
+                            <li>Без предоплаты</li>
+                            <li>Проверка товара</li>
+                            <li>Выдача чека</li>
+                        </ul>
+                    </div>
+
+                    <div class="payment-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Электронными кошельками</h3>
+                        <p>Оплата через ЮMoney, QIWI, WebMoney и другие электронные платежные системы.</p>
+                        <ul>
+                            <li>Быстрая оплата</li>
+                            <li>Мгновенное подтверждение</li>
+                            <li>Бонусы и кэшбэк</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="payment-info">
+                    <h2>Информация об оплате</h2>
+                    <ul>
+                        <li>Оплата производится в рублях Российской Федерации</li>
+                        <li>При оплате картой вы получите чек на email</li>
+                        <li>При оплате наличными вы получите товарный чек</li>
+                        <li>Возможна оплата по безналичному расчету для юридических лиц</li>
+                        <li>Доступна рассрочка на 6 месяцев без переплат</li>
+                    </ul>
+                </div>
+
+                <div class="payment-security">
+                    <h2>Безопасность платежей</h2>
+                    <div class="security-features">
+                        <div class="security-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>SSL-шифрование</h4>
+                            <p>Все платежи защищены 256-битным SSL-шифрованием</p>
+                        </div>
+                        <div class="security-feature">
+                            <i class="fas fa-lock"></i>
+                            <h4>Безопасное хранение</h4>
+                            <p>Данные карт не хранятся на нашем сервере</p>
+                        </div>
+                        <div class="security-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Проверка платежей</h4>
+                            <p>Каждый платеж проходит многоуровневую проверку</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-terms">
+                    <h2>Условия оплаты</h2>
+                    <p>Для оформления заказа необходимо:</p>
+                    <ul>
+                        <li>Выбрать товар и добавить его в корзину</li>
+                        <li>Выбрать способ доставки</li>
+                        <li>Выбрать способ оплаты</li>
+                        <li>Подтвердить заказ</li>
+                    </ul>
+                    <p>После оформления заказа:</p>
+                    <ul>
+                        <li>При оплате картой - оплата происходит сразу</li>
+                        <li>При оплате наличными - оплата при получении</li>
+                        <li>При оплате электронным кошельком - оплата в течение 24 часов</li>
+                    </ul>
+                    <p>В случае отказа от товара:</p>
+                    <ul>
+                        <li>При оплате картой - возврат в течение 10 рабочих дней</li>
+                        <li>При оплате наличными - возврат наличными при отказе</li>
+                        <li>При оплате электронным кошельком - возврат на кошелек в течение 3 дней</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>О компании</h4>
+                <ul>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html">Контакты</a></li>
+                    <li><a href="careers.html">Вакансии</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Помощь</h4>
+                <ul>
+                    <li><a href="delivery.html">Доставка</a></li>
+                    <li><a href="payment.html">Оплата</a></li>
+                    <li><a href="returns.html">Возврат</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Магазин Электроники. Все права защищены.</p>
+            <p><a href="sitemap.html">Карта сайта</a></p>
+        </div>
+    </footer>
+</body>
+</html> 

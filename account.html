@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой профиль - TechStore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .profile-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+
+        .profile-sidebar {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .profile-main {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .user-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .user-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;и
+            justify-content: center;
+            font-size: 3em;
+            color: #3498db;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .avatar-upload {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
+            padding: 5px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .user-avatar:hover .avatar-upload {
+            opacity: 1;
+        }
+
+        .user-name {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .user-email {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .profile-nav {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-nav li {
+            margin-bottom: 10px;
+        }
+
+        .profile-nav a {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            color: #34495e;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .profile-nav a:hover,
+        .profile-nav a.active {
+            background: #f0f7ff;
+            color: #3498db;
+        }
+
+        .profile-nav i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .profile-section {
+            display: none;
+        }
+
+        .profile-section.active {
+            display: block;
+        }
+
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+            font-size: 1.8em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+
+        .order-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .order-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .order-number {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .order-date {
+            color: #7f8c8d;
+        }
+
+        .order-status {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        .status-completed {
+            background: #2ecc71;
+            color: #fff;
+        }
+
+        .status-processing {
+            background: #f1c40f;
+            color: #fff;
+        }
+
+        .status-cancelled {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .order-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .product-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .order-total {
+            text-align: right;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .wishlist-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            position: relative;
+        }
+
+        .wishlist-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .wishlist-item-title {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .wishlist-item-price {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .wishlist-item-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .remove-wishlist {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e74c3c;
+            transition: all 0.3s;
+        }
+
+        .remove-wishlist:hover {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-sidebar {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">TechStore</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="catalog.html">Каталог</a>
+                <a href="about.html">О нас</a>
+                <a href="contact.html">Контакты</a>
+            </div>
+            <div class="nav-icons">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="favorites.html"><i class="fas fa-heart"></i></a>
+                <a href="account.html"><i class="fas fa-user"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+        <aside class="profile-sidebar">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                    <div class="avatar-upload">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+                <h2 class="user-name">Иван Иванов</h2>
+                <p class="user-email">ivan@example.com</p>
+            </div>
+            <ul class="profile-nav">
+                <li>
+                    <a href="#personal" class="active" data-section="personal">
+                        <i class="fas fa-user"></i>
+                        Личные данные
+                    </a>
+                </li>
+                <li>
+                    <a href="#orders" data-section="orders">
+                        <i class="fas fa-shopping-bag"></i>
+                        Мои заказы
+                    </a>
+                </li>
+                <li>
+                    <a href="#wishlist" data-section="wishlist">
+                        <i class="fas fa-heart"></i>
+                        Избранное
+                    </a>
+                </li>
+                <li>
+                    <a href="#addresses" data-section="addresses">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Адреса доставки
+                    </a>
+                </li>
+                <li>
+                    <a href="#security" data-section="security">
+                        <i class="fas fa-lock"></i>
+                        Безопасность
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="profile-main">
+            <section id="personal" class="profile-section active">
+                <h2 class="section-title">Личные данные</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" class="form-control" value="Иван">
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Фамилия</label>
+                        <input type="text" id="surname" class="form-control" value="Иванов">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" value="ivan@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" class="form-control" value="+7 (999) 123-45-67">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                </form>
+            </section>
+
+            <section id="orders" class="profile-section">
+                <h2 class="section-title">Мои заказы</h2>
+                <ul class="order-list">
+                    <li class="order-item">
+                        <div class="order-header">
+                            <span class="order-number">Заказ #12345</span>
+                            <span class="order-date">15.03.2024</span>
+                        </div>
+                        <div class="order-products">
+                            <div class="product-item">
+                                <img src="images/iphone.jpg" alt="iPhone" class="product-image">
+                                <div class="product-info">
+                                    <div class="product-name">iPhone 15 Pro</div>
+                                    <div class="product-price">89 990 ₽</div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <img src="images/airpods.jpg" alt="AirPods" class="product-image">
+                                <div class="product-info">
+                                    <div class="product-name">AirPods Pro</div>
+                                    <div class="product-price">19 990 ₽</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-total">
+                            Итого: 109 980 ₽
+                        </div>
+                        <div class="order-status status-completed">Выполнен</div>
+                    </li>
+                    <li class="order-item">
+                        <div class="order-header">
+                            <span class="order-number">Заказ #12344</span>
+                            <span class="order-date">10.03.2024</span>
+                        </div>
+                        <div class="order-products">
+                            <div class="product-item">
+                                <img src="images/macbook.jpg" alt="MacBook" class="product-image">
+                                <div class="product-info">
+                                    <div class="product-name">MacBook Pro 14"</div>
+                                    <div class="product-price">149 990 ₽</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-total">
+                            Итого: 149 990 ₽
+                        </div>
+                        <div class="order-status status-processing">В обработке</div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="wishlist" class="profile-section">
+                <h2 class="section-title">Избранное</h2>
+                <div class="wishlist-grid">
+                    <div class="wishlist-item">
+                        <button class="remove-wishlist">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <img src="images/iphone.jpg" alt="iPhone">
+                        <h3 class="wishlist-item-title">iPhone 15 Pro</h3>
+                        <div class="wishlist-item-price">89 990 ₽</div>
+                        <div class="wishlist-item-actions">
+                            <button class="btn btn-primary">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="wishlist-item">
+                        <button class="remove-wishlist">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <img src="images/macbook.jpg" alt="MacBook">
+                        <h3 class="wishlist-item-title">MacBook Pro 14"</h3>
+                        <div class="wishlist-item-price">149 990 ₽</div>
+                        <div class="wishlist-item-actions">
+                            <button class="btn btn-primary">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="addresses" class="profile-section">
+                <h2 class="section-title">Адреса доставки</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="address">Адрес</label>
+                        <input type="text" id="address" class="form-control" value="г. Москва, ул. Примерная, 123">
+                    </div>
+                    <div class="form-group">
+                        <label for="apartment">Квартира/Офис</label>
+                        <input type="text" id="apartment" class="form-control" value="45">
+                    </div>
+                    <div class="form-group">
+                        <label for="postal">Почтовый индекс</label>
+                        <input type="text" id="postal" class="form-control" value="123456">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Сохранить адрес</button>
+                </form>
+            </section>
+
+            <section id="security" class="profile-section">
+                <h2 class="section-title">Безопасность</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="current-password">Текущий пароль</label>
+                        <input type="password" id="current-password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">Новый пароль</label>
+                        <input type="password" id="new-password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Подтвердите пароль</label>
+                        <input type="password" id="confirm-password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Изменить пароль</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О компании</h3>
+                <p>TechStore - ваш надежный магазин электроники с широким ассортиментом товаров и отличным сервисом.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+                <p><i class="fas fa-envelope"></i> info@techstore.ru</p>
+                <p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Примерная, 123</p>
+            </div>
+            <div class="footer-section">
+                <h3>Мы в соцсетях</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechStore. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Переключение между разделами
+        document.querySelectorAll('.profile-nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = link.getAttribute('data-section');
+                
+                // Убираем активный класс у всех ссылок и секций
+                document.querySelectorAll('.profile-nav a').forEach(a => a.classList.remove('active'));
+                document.querySelectorAll('.profile-section').forEach(s => s.classList.remove('active'));
+                
+                // Добавляем активный класс выбранной ссылке и секции
+                link.classList.add('active');
+                document.getElementById(section).classList.add('active');
+            });
+        });
+
+        // Загрузка аватара
+        document.querySelector('.avatar-upload').addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        const avatar = document.querySelector('.user-avatar');
+                        avatar.innerHTML = '';
+                        avatar.appendChild(img);
+                        avatar.appendChild(document.querySelector('.avatar-upload'));
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        });
+    </script>
+</body>
+</html> 
